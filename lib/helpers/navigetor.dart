@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:quran/Screens/splash_screen.dart';
 
 mixin navegetorHelper {
   void jump(

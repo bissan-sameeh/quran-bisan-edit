@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:quran/Screens/main_screen.dart';
 import 'package:quran/helpers/constants.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../helpers/navigetor.dart';
 import 'home_screen0.dart';
@@ -16,6 +17,19 @@ class OnBoardingScreen extends StatefulWidget {
 
 class _OnBoardingScreenState extends State<OnBoardingScreen>
     with navegetorHelper {
+  late bool alreadyUser;
+  void setData() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("alreadyUser", true);
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    setData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -23,7 +37,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen>
       body: IntroductionScreen(
         pages: [
           PageViewModel(
-            title: "Read Quran ",
+            title: "Read Quran",
             bodyWidget: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

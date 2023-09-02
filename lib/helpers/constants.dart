@@ -17,4 +17,6 @@ class Constants {
     800: Color(0xfff3eefa),
     900: Color(0xffffffff),
   });
+  static int? juzIndex;
+  static int? surahIndex;
 }

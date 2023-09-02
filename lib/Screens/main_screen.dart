@@ -1,8 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:quran/Screens/audio_screen.dart';
+import 'package:quran/Screens/qari_screen.dart';
 import 'package:quran/Screens/home_screen0.dart';
 import 'package:quran/Screens/prayer_screen.dart';
 import 'package:quran/Screens/quran_screen.dart';
@@ -12,16 +11,16 @@ class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
 
   @override
-  State<MainScreen> createState() => _HomeScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _HomeScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen> {
   int _selectedItem = 0;
-  List<Widget> _widgetList = [
-    HomeScreen(),
-    QuranScreen(),
-    AudioScreen(),
-    PrayerScreen()
+  final List<Widget> _widgetList = [
+    const HomeScreen(),
+    const QuranScreen(),
+    const QariScreen(),
+    const PrayerScreen()
   ];
 
   @override
